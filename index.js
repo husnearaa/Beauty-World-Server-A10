@@ -17,7 +17,7 @@ app.use(express.json());
 
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.z68kb3h.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://husnearaa:vCS4qORxASFULbXa@cluster0.z68kb3h.mongodb.net/?retryWrites=true&w=majority`;
 console.log(uri);
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -32,7 +32,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     const cardCollection = client.db("productDB").collection("cards");
     const myCartCollection = client.db("productDB").collection("myCard");
@@ -124,7 +124,7 @@ async function run() {
 
 
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
+    // await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
